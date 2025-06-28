@@ -4,12 +4,13 @@ const protect = require("../middlewares/authMiddleware");
 
 const {
   createCategory,
-  getAllCategory,
+  getAllCategories,
   updateCategory,
   deleteCategory,
 } = require("../controllers/categoryController");
 
 router.post("/category", protect, createCategory);
-router.get("/categories", protect, getAllCategory);
+router.get("/categories", protect, getAllCategories);
 router.put("/category/:id", protect, updateCategory);
 router.delete("/category/:id", protect, deleteCategory);
+module.exports = router;

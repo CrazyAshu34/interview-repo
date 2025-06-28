@@ -11,7 +11,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
-exports.getAllCategoryes = async (req, res) => {
+exports.getAllCategories = async (req, res) => {
   const categories = await Category.find();
   res.json(categories);
 };
@@ -19,7 +19,7 @@ exports.getAllCategoryes = async (req, res) => {
 exports.updateCategory = async (req, res) => {
   try {
     const updated = await Category.findByIdAndUpdate(
-      req.parms.id,
+      req.params.id,
       { name: req.body.name },
       { new: true }
     );
@@ -36,6 +36,6 @@ exports.deleteCategory = async (req, res) => {
       .status(400)
       .json({ message: "Category has service, can't delete" });
   }
-  await Category.findByIdAndUpdateDelete(req.params.id);
+  await Category.findByIdAndDelete(req.params.id);
   res.json({ message: "Category deleted" });
 };

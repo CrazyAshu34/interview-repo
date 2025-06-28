@@ -5,7 +5,7 @@ const serviceSchema = new mongoose.Schema({
     categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
     name: { type: String, required: true },
     type: { type: String, enum: ['Normal', 'VIP'], required: true },
-    priceOption: [servicePriceOptionSchema]
+    priceOptions: [servicePriceOptionSchema]
 });
 
 module.exports = mongoose.model("Service", serviceSchema);

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const priceOptionSchema = new mongoose.Schema({
+const servicePriceOptionSchema = new mongoose.Schema({
     duration: String,
     price: Number,
     type: {
@@ -8,4 +8,4 @@ const priceOptionSchema = new mongoose.Schema({
     },
 });
 
-module.exports = priceOptionSchema;
+module.exports = servicePriceOptionSchema;

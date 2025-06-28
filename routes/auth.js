@@ -11,7 +11,7 @@ router.post("/login", (req, res) => {
   if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
     return res.status(401).json({ message: "Invalid credentials" });
   }
-  const token = jwt.sign({ email }, process.env.JWT_SECRET, { expireIn: "1h" });
+  const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1h" });
   res.json({ token });
 });
 
